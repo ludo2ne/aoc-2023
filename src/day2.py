@@ -33,7 +33,6 @@ def part2(text):
     power = 0
 
     for line in lines:
-        id_game = int(line.split(":")[0][5:])
         color_max = {"red": 1, "green": 1, "blue": 1}
 
         for game in line.split(":")[1].split(";"):
