@@ -3,20 +3,21 @@
 * Day 1: Trebuchet?!
     * find first and last digit
 * Day 2: Cube Conundrum
-    * 
+    * fewest number of cubes of each color
+* Day 3: Gear Ratios
+    * grid, find numbers adjacent to symbols
+* Day 4: Scratchcards
+    * number of winning numbers
 
 
-## TODO
 
-* [ ] automatiser chargement fichier
-* Voir https://github.com/jonathanpaulson/AdventOfCode/blob/master/get_input.py
+## Import data files
 
-.env > SESSION
+Inspired by the [Jonathan Paulson](https://github.com/jonathanpaulson/AdventOfCode/blob/master/get_input.py) code
 
-# You can find SESSION by using Chrome tools:
-# 1) Go to https://adventofcode.com/2023/day/1/input
-# 2) right-click -> inspect -> click "Network".
-# 3) Refresh
-# 4) Click click
-# 5) Click cookies
-# 6) Grab the value for session. Fill it in.
+* Find your SESSION number
+    * https://adventofcode.com/2023/day/1/input
+    * right click > inspect
+    * click `Network` > F5 to refresh
+    * input > Cookie > copy **session**
+* in your `.env` file, paste your session number : `SESSION=`
