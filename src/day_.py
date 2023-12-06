@@ -6,11 +6,19 @@ example = """paste_here"""
 
 def part1(text):
     lines = text.splitlines()
+
+    for index, line in enumerate(lines):
+        pass
+
     return None
 
 
 def part2(text):
     lines = text.splitlines()
+
+    for index, line in enumerate(lines):
+        pass
+
     return None
 
 
