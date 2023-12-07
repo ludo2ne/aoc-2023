@@ -1,4 +1,6 @@
 import os
+
+from time import time
 from utils.get_input import import_input
 
 example = """paste_here"""
@@ -10,7 +12,7 @@ def part1(text):
     for index, line in enumerate(lines):
         pass
 
-    return None
+    return ""
 
 
 def part2(text):
@@ -19,7 +21,7 @@ def part2(text):
     for index, line in enumerate(lines):
         pass
 
-    return None
+    return ""
 
 
 if __name__ == "__main__":
@@ -28,10 +30,12 @@ if __name__ == "__main__":
     input_path = "data/day" + day_num + ".txt"
     text_input = open(input_path, "r").read()
 
-    print("1. Example : ", part1(example))
-    print("1. Input : ", part1(text_input))
-
+    start_time = time()
+    print(f"1. Example :  {part1(example):<20} ({time()-start_time:.3f} s)")
+    start_time = time()
+    print(f"1. Input   :  {part1(text_input):<20} ({time()-start_time:.3f} s)")
     print("-" * 100)
-
-    print("2. Example : ", part2(example))
-    print("2. Input : ", part2(text_input))
+    start_time = time()
+    print(f"2. Example :  {part2(example):<20} ({time()-start_time:.3f} s)")
+    start_time = time()
+    print(f"2. Input   :  {part2(text_input):<20} ({time()-start_time:.3f} s)")

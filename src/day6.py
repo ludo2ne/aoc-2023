@@ -1,5 +1,6 @@
 import os
 import re
+from time import time
 from functools import reduce
 from utils.get_input import import_input
 
@@ -8,6 +9,7 @@ Distance:  9  40  200"""
 
 
 def part1(text):
+    start_time = time()
     lines = text.splitlines()
 
     times = list(map(int, re.findall(r"\d+", lines[0])))
@@ -17,32 +19,27 @@ def part1(text):
     for i, t in enumerate(times):
         d = distances[i]
         for speed in range(1, t - 1):
-            if d < speed * (t - speed):
-                win_ways[i] += 1
+            win_ways[i] += d < speed * (t - speed)
 
-    return reduce(lambda a, b: a * b, win_ways)
+    return reduce(lambda a, b: a * b, win_ways), time() - start_time
 
 
 def part2(text):
+    start_time = time()
     lines = text.splitlines()
 
-    time = int(lines[0].split(":")[1].replace(" ", ""))
-    distance = int(lines[1].split(":")[1].replace(" ", ""))
+    times = int(lines[0].split(":")[1].replace(" ", ""))
+    distances = int(lines[1].split(":")[1].replace(" ", ""))
 
-    win_ways_inf = None
-    win_ways_sup = None
-
-    for speed in range(1, time - 1):
-        if distance < speed * (time - speed):
-            win_ways_inf = speed
+    for speed_inf in range(1, times - 1):
+        if distances < speed_inf * (times - speed_inf):
             break
 
-    for speed in range(time - 1, 1, -1):
-        if distance < speed * (time - speed):
-            win_ways_sup = speed
+    for speed_sup in range(times - 1, 1, -1):
+        if distances < speed_sup * (times - speed_sup):
             break
 
-    return win_ways_sup - win_ways_inf + 1
+    return speed_sup - speed_inf + 1, time() - start_time
 
 
 if __name__ == "__main__":
@@ -51,10 +48,10 @@ if __name__ == "__main__":
     input_path = "data/day" + day_num + ".txt"
     text_input = open(input_path, "r").read()
 
-    print("1. Example : ", part1(example))
-    print("1. Input : ", part1(text_input))
+    print(f"1. Example : {part1(example)[0]:<20} ({part1(example)[1]:.3f} s)")
+    print(f"1. Input   : {part1(text_input)[0]:<20} ({part1(text_input)[1]:.3f} s)")
 
     print("-" * 100)
 
-    print("2. Example : ", part2(example))
-    print("2. Input : ", part2(text_input))
+    print(f"2. Example : {part2(example)[0]:<20} ({part2(example)[1]:.3f} s)")
+    print(f"2. Input   : {part2(text_input)[0]:<20} ({part2(text_input)[1]:.3f} s)")
