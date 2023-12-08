@@ -34,7 +34,9 @@ if __name__ == "__main__":
     print(f"1. Example :  {part1(example):<20} ({time()-start_time:.3f} s)")
     start_time = time()
     print(f"1. Input   :  {part1(text_input):<20} ({time()-start_time:.3f} s)")
+
     print("-" * 100)
+
     start_time = time()
     print(f"2. Example :  {part2(example):<20} ({time()-start_time:.3f} s)")
     start_time = time()
