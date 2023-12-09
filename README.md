@@ -8,6 +8,16 @@
     * grid, find numbers adjacent to symbols
 * Day 4: Scratchcards
     * number of winning numbers
+* Day 5: If You Give A Seed A Fertilizer
+    * Transform intervals (TODO)
+* Day 6: Wait For It
+    * Split time between speed up or move
+* Day 7: Camel Cards
+    * Poker class hands
+* Day 8: Haunted Wasteland
+    * next element LEFT or RIGHT
+    * Lower common multiple
+* Day 9: Mirage Maintenance
 
 
 

@@ -77,9 +77,6 @@ def part2(text):
             steps += 1
             for e in current_elements:
                 current_new.append(next_element[e][instructions[i] == "R"])
-                # print(
-                #    f"{e} --{instructions[i]}:{next_element[e]} --> {current_new[-1]}"
-                # )
 
                 if current_new[-1].endswith("Z"):
                     steps_by_element.append(steps)
@@ -87,7 +84,6 @@ def part2(text):
 
             current_elements = current_new.copy()
             current_new = []
-            # print(current_elements)
 
     return math.lcm(*steps_by_element)
 
